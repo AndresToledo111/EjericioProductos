@@ -36,32 +36,57 @@ public class Producto {
         return descripcionProducto;
     }
 
-    public void setDescripcionProducto(String descripcionProducto) {
-        this.descripcionProducto = descripcionProducto;
-    }
+    public void setDescripcionProducto(String descripcionProducto) throws Exception {
+        if (descripcionProducto.trim() !="") {
+            if (descripcionProducto.length() >= 15 && descripcionProducto.length() < 100) {
+
+                this.descripcionProducto = descripcionProducto;
+            }
+            else
+            {
+                
+                throw new Exception("Descripcion debe estar entre los 15 y 100 caracteres");
+            }
+        }
+        else
+        {
+            throw new Exception("No dejar campo vacio");
+        }
+            
+        }
 
     public int getNumeroLote() {
         return numeroLote;
     }
 
-    public void setNumeroLote(int numeroLote) {
-        this.numeroLote = numeroLote;
+    public void setNumeroLote(int numeroLote) throws Exception {
+        
+            if (numeroLote >0 && numeroLote < 500) {
+
+                this.numeroLote = numeroLote;
+            }
+            else
+            {
+                
+                throw new Exception("Numero de lote debe ser mayor a 0 y 500 ");
+            }
+        
+        
     }
 
     public Producto(String fechaCaducidad, String descripcionProducto, int numeroLote) throws Exception {
         setFechaCaducidad(fechaCaducidad);
-        this.descripcionProducto = descripcionProducto;
-        this.numeroLote = numeroLote;
+        setDescripcionProducto(descripcionProducto);        
+        setNumeroLote(numeroLote);
     }
 
-    public String Imprimir() {
+    @Override
+    public String toString() {
         return "\nDATOS DE PRODUCTOS \n"
                 + "\nFecha de caducidad del producto: " + fechaCaducidad
                 + "\nDescripcion del producto: " + descripcionProducto
                 + "\nNumero de lote: " + numeroLote
-                +"\n-----------------";
-        
-        
+                + "\n-----------------";
     }
 
 }

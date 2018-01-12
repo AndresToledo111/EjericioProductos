@@ -35,15 +35,15 @@ public class ProFrescos extends Producto {
         this.paisOrigen = paisOrigen;
     }
 
-    public String imprimir() {
-        return "\nDATOS DE PRODUCTOS FRESCOS\n"
+
+    @Override
+    public String toString() {
+return "\nDATOS DE PRODUCTOS FRESCOS\n"
                 + "\nFecha de envasado: " + fechaEnvasado
                 + "\nPais de origen: " + paisOrigen
                 + "\nFecha de caducidad del producto: " + fechaCaducidad
                 + "\nDescripcion del producto: " + descripcionProducto
                 + "\nNumero de lote: " + numeroLote
-                + "\n-----------------";
-
-    }
+                + "\n-------------------------";    }
 
 }
