@@ -9,6 +9,26 @@ package Entidades;
  *
  * @author patri
  */
-public class ProRefrigerados {
-    int codSupervision;
+public class ProRefrigerados extends Producto {
+    int codSupervision,tempRecomendada;
+
+    public int getCodSupervision() {
+        return codSupervision;
+    }
+
+    public void setCodSupervision(int codSupervision) {
+        this.codSupervision = codSupervision;
+    }
+
+    public int getTempRecomendada() {
+        return tempRecomendada;
+    }
+
+    public void setTempRecomendada(int tempRecomendada) {
+        this.tempRecomendada = tempRecomendada;
+    }
+    
+    
+    
+    
 }
